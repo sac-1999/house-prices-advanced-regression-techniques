@@ -4,30 +4,17 @@
 3. Check null or missing values — Detect data quality issues → Plan imputation/removal.
 4. Check duplicate rows — Identify redundancy → Clean data.
 5. Check unique values per column — Understand feature variety → Find categorical vs continuous.
-
-Check constant columns — Detect uninformative features → Drop them.
-
-Check memory usage — Optimize data loading → Helps in performance.
-
-Preview first few rows — Visualize structure → Verify columns loaded correctly.
-
-Check column naming consistency — Find inconsistent or misleading names → Clean schema.
-
-Check timestamp range — For time series → Detect missing periods or gaps.
+6. Check constant columns — Detect uninformative features → Drop them.
+6.b Check memory usage — Optimize data loading → Helps in performance.
 
 📊 Univariate Analysis
 
-Histogram of numerical columns — See distribution shape → Detect skewness/outliers.
+7. Histogram of numerical columns — See distribution shape → Detect skewness/outliers.
+8. Boxplot of numerical columns — Identify outliers → Plan scaling/trimming.
+9. Count plot of categorical variables — See class balance → Detect dominant or rare categories.
+10. KDE (density) plots — View continuous variable distribution → Understand modality.
 
-Boxplot of numerical columns — Identify outliers → Plan scaling/trimming.
-
-Count plot of categorical variables — See class balance → Detect dominant or rare categories.
-
-Value counts for categorical features — Understand frequency distribution → Handle rare classes.
-
-KDE (density) plots — View continuous variable distribution → Understand modality.
-
-Summary statistics (describe()) — Get mean, std, min, max → Numeric insight.
+it 
 
 Quantile analysis — Check data spread → Identify extreme values.
 
