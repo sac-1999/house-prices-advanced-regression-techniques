@@ -1,0 +1,228 @@
+🧩 Data Overview & Structure
+1. Check shape of dataset — Understand rows/columns count → Helps estimate dataset size.
+2. List all columns and data types — Identify numeric, categorical, date, and text features → Plan preprocessing.
+3. Check null or missing values — Detect data quality issues → Plan imputation/removal.
+4. Check duplicate rows — Identify redundancy → Clean data.
+5. Check unique values per column — Understand feature variety → Find categorical vs continuous.
+
+Check constant columns — Detect uninformative features → Drop them.
+
+Check memory usage — Optimize data loading → Helps in performance.
+
+Preview first few rows — Visualize structure → Verify columns loaded correctly.
+
+Check column naming consistency — Find inconsistent or misleading names → Clean schema.
+
+Check timestamp range — For time series → Detect missing periods or gaps.
+
+📊 Univariate Analysis
+
+Histogram of numerical columns — See distribution shape → Detect skewness/outliers.
+
+Boxplot of numerical columns — Identify outliers → Plan scaling/trimming.
+
+Count plot of categorical variables — See class balance → Detect dominant or rare categories.
+
+Value counts for categorical features — Understand frequency distribution → Handle rare classes.
+
+KDE (density) plots — View continuous variable distribution → Understand modality.
+
+Summary statistics (describe()) — Get mean, std, min, max → Numeric insight.
+
+Quantile analysis — Check data spread → Identify extreme values.
+
+Log transformation check — See if log scaling improves distribution → Normalize skewed data.
+
+Missing data visualization (heatmap) — Detect missingness patterns → Impute wisely.
+
+Outlier ratio check — Detect how many points are beyond thresholds → Plan robust models.
+
+🔗 Bivariate Analysis
+
+Correlation matrix (numeric vs numeric) — Identify feature relationships → Remove redundancy.
+
+Heatmap of correlations — Visual visual summary → Select key features.
+
+Scatter plots — Detect linear or nonlinear patterns → Suggest model type.
+
+Pairplot — Overview of relationships between multiple numeric vars → Feature interactions.
+
+Grouped mean/median by category — Check numeric behavior per group → Find strong predictors.
+
+Boxplot (numeric vs categorical) — Compare distributions → Detect group differences.
+
+Bar plot (categorical vs target) — Find patterns in target variable → Reveal trends.
+
+Crosstab analysis — Study categorical associations → Detect dependency.
+
+Correlation with target — Feature importance approximation → Guide model selection.
+
+Chi-square test for categorical features — Check independence → Reduce irrelevant features.
+
+⏱️ Time-Series Specific
+
+Trend plot over time — Detect growth or decline → Temporal insight.
+
+Seasonality decomposition — Extract seasonality patterns → Improves forecasting.
+
+Rolling mean/variance analysis — Detect stability → Understand volatility.
+
+Lag correlation analysis — Identify lag relationships → Feature engineering.
+
+Missing time gaps check — Ensure continuity → Fix irregular intervals.
+
+📉 Multivariate & Relationship Analysis
+
+PCA (Principal Component Analysis) — Visualize variance → Dimensionality insight.
+
+Clustering (e.g., K-Means visualization) — See natural grouping → Understand segments.
+
+Pairwise correlation with target — Find most predictive variables → Feature ranking.
+
+ANOVA test — Determine group differences statistically → Feature relevance.
+
+Heatmap of feature interactions — Spot nonlinear or combined effects → Feature creation ideas.
+
+📋 Target Variable Analysis
+
+Target variable distribution — Check class balance → Handle imbalance early.
+
+Compare target across groups — Detect key categorical influencers → Prioritize features.
+
+Target correlation summary — Measure numeric influence → Guide feature selection.
+
+Missing vs Target analysis — Detect if missingness correlates → Insight for imputation.
+
+Outliers vs Target behavior — Identify if extreme values affect target → Robust model strategy.
+
+🧠 Quality & Data Integrity
+
+Check inconsistent categorical labels — Detect typos → Clean categories.
+
+Identify invalid numeric ranges — Detect negative ages, etc. → Data validation.
+
+Detect anomalies — Unusual values → Investigate errors or special cases.
+
+Cross-feature logical checks — e.g., EndDate > StartDate → Integrity validation.
+
+Detect data drift (train vs test) — See if distributions differ → Prevent model bias.
+
+🧠 Feature Relationship & Redundancy
+
+Multicollinearity check (VIF) — Detect redundant predictors → Prevent unstable regression models.
+
+Mutual Information analysis — Capture nonlinear dependencies between features → Better feature ranking.
+
+Feature importance via simple model (e.g., RandomForest) — Quick insight on predictive features → Prioritize top variables.
+
+Recursive Feature Elimination (RFE) — Identify best subset of features → Dimensionality reduction.
+
+Spearman vs Pearson correlation comparison — Detect monotonic but nonlinear relations → Choose right correlation type.
+
+🧩 Categorical Feature Insights
+
+Target encoding vs One-hot encoding effect check — Understand encoding impact → Choose best representation.
+
+Category frequency vs Target mean plot — Detect rare but impactful classes → Feature smoothing.
+
+Entropy or Information Gain calculation — Quantify categorical information power → Improve encoding strategy.
+
+Cardinality ratio analysis — Check how many unique values per category → Avoid overfitting from high-cardinality.
+
+Rare category merging analysis — Test effect of grouping small classes → Improve stability.
+
+⏱️ Temporal & Sequence Analysis
+
+Time difference between events — Detect patterns in intervals → Feature creation.
+
+Cumulative or rolling feature trends — Identify momentum-type behavior → Great for finance/time series.
+
+Autocorrelation and Partial Autocorrelation plots (ACF/PACF) — Detect lag effects → Time series forecasting base.
+
+Event rate per time window — Identify bursts or trends → Detect cyclic behavior.
+
+Temporal anomaly detection — Spot unusual periods → Investigate special cases.
+
+💡 Outlier & Anomaly Detection
+
+Isolation Forest or DBSCAN outlier analysis — Detect multivariate anomalies → Remove or label rare events.
+
+Z-score distribution — Quantify extremeness of each point → Outlier cutoff planning.
+
+Mahalanobis distance — Identify multivariate outliers → Robust cleaning.
+
+Box-Cox or Yeo-Johnson transformation check — Normalize skewed data → Improve modeling.
+
+Winsorization simulation — Check impact of capping outliers → Evaluate safe limits.
+
+📉 Data Balance & Target Leakage
+
+Train-test distribution comparison — Detect leakage or sampling bias → Protect generalization.
+
+Feature leakage analysis (target inside feature) — Ensure true independence → Prevent inflated accuracy.
+
+Cross-validation split validation — Check target balance across folds → Reliable model training.
+
+Check label encoding consistency between train/test — Avoid unseen category errors → Ensure stable pipeline.
+
+Class imbalance quantification — Measure minority-majority ratio → Plan resampling/weighting.
+
+📊 Visualization-Focused EDA
+
+Facet grid plots — Compare feature-target relations across multiple groups → Multi-level insights.
+
+Violin plots — Show data spread and density → Detect skewness and overlap.
+
+Swarm plots — Visualize distribution overlap precisely → Detect dense clusters.
+
+Hexbin / 2D density plots — For high-volume data → Show concentration zones.
+
+Parallel coordinate plots — Compare multiple variables together → Identify distinctive feature combinations.
+
+🧩 Data Integrity & Business Logic
+
+ID column uniqueness check — Verify data record identity → Avoid duplicates.
+
+Feature range sanity checks (domain) — Ensure physical validity (e.g., negative prices invalid) → Data quality.
+
+Cross-field logical validation — Example: DeliveryDate >= OrderDate → Detect invalid records.
+
+Check for impossible combinations — e.g., “Male” with “Pregnant=Yes” → Data corruption.
+
+Check for negative or zero target values — Detect invalid labels → Clean dataset.
+
+📈 Target Behavior & Model Readiness
+
+Residual simulation using simple model — Understand unexplained variance → Guides feature engineering.
+
+Heteroscedasticity test (Breusch-Pagan) — Check variance change over target → Adjust scaling.
+
+Normality test (Shapiro-Wilk / KS test) — Check assumption of normal target → Apply transformation if needed.
+
+Feature scaling check (Min-Max vs Standard) — Evaluate influence → Choose normalization method.
+
+Feature drift simulation over time — Check changing distributions → Identify data drift issues.
+
+🧠 Domain-Specific / Holistic EDA
+
+Business KPI correlation — e.g., profit vs marketing spend → Real-world impact.
+
+Geospatial EDA (if location data) — Map-based heatmaps → Regional trends.
+
+Text column EDA (word counts, TF-IDF, stopword ratio) — If textual data exists → NLP readiness.
+
+Image metadata check (size, color, format) — For vision datasets → Quality assurance.
+
+Feature distribution stability check (train vs production) — Detect shift → Model monitoring prep.
+
+📊 Final Summaries
+
+EDA summary report generation (e.g., pandas-profiling) — Auto-summary → Reusable documentation.
+
+Target-feature ranking summary — Overview of importance → Feature selection base.
+
+Correlation network graph — Visual graph of related features → Simplify structure.
+
+Data completeness summary — % completeness per column → Data readiness metric.
+
+EDA dashboard (Streamlit/Plotly) — Interactive exploration → Easy reporting.
