@@ -14,27 +14,19 @@
 9. Count plot of categorical variables — See class balance → Detect dominant or rare categories.
 10. KDE (density) plots — View continuous variable distribution → Understand modality.
 
-it 
 
-Quantile analysis — Check data spread → Identify extreme values.
-
-Log transformation check — See if log scaling improves distribution → Normalize skewed data.
-
-Missing data visualization (heatmap) — Detect missingness patterns → Impute wisely.
-
-Outlier ratio check — Detect how many points are beyond thresholds → Plan robust models.
+Descriptive Stats:
+11. Summary statistics (describe()) — Get mean, std, min, max → Numeric insight.
+12. Log transformation check — See if log scaling improves distribution → Normalize skewed data.
+13. Missing data visualization (heatmap) — Detect missingness patterns → Impute wisely.
+14. Outlier ratio check — Detect how many points are beyond thresholds → Plan robust models.
 
 🔗 Bivariate Analysis
 
-Correlation matrix (numeric vs numeric) — Identify feature relationships → Remove redundancy.
-
-Heatmap of correlations — Visual visual summary → Select key features.
-
-Scatter plots — Detect linear or nonlinear patterns → Suggest model type.
-
-Pairplot — Overview of relationships between multiple numeric vars → Feature interactions.
-
-Grouped mean/median by category — Check numeric behavior per group → Find strong predictors.
+15. Correlation matrix (numeric vs numeric) — Identify feature relationships → Remove redundancy.
+16. Scatter plots — Detect linear or nonlinear patterns → Suggest model type.
+17. Pairplot — Overview of relationships between multiple numeric vars → Feature interactions.
+18. Grouped mean/median by category — Check numeric behavior per group → Find strong predictors.
 
 Boxplot (numeric vs categorical) — Compare distributions → Detect group differences.
 
@@ -46,17 +38,7 @@ Correlation with target — Feature importance approximation → Guide model sel
 
 Chi-square test for categorical features — Check independence → Reduce irrelevant features.
 
-⏱️ Time-Series Specific
 
-Trend plot over time — Detect growth or decline → Temporal insight.
-
-Seasonality decomposition — Extract seasonality patterns → Improves forecasting.
-
-Rolling mean/variance analysis — Detect stability → Understand volatility.
-
-Lag correlation analysis — Identify lag relationships → Feature engineering.
-
-Missing time gaps check — Ensure continuity → Fix irregular intervals.
 
 📉 Multivariate & Relationship Analysis
 
@@ -213,3 +195,149 @@ Correlation network graph — Visual graph of related features → Simplify stru
 Data completeness summary — % completeness per column → Data readiness metric.
 
 EDA dashboard (Streamlit/Plotly) — Interactive exploration → Easy reporting.
+
+
+
+A. Data Structure & Integrity
+
+Dataset overview (shape, dtypes, memory usage)
+
+Feature cardinality & constant check
+
+Missing value summary
+
+Duplicate records check
+
+Data consistency & logical validation (e.g., date order, impossible combos)
+
+B. Univariate Analysis
+
+Distribution visualization (Histogram, KDE, Boxplot)
+
+Descriptive statistics (mean, std, skewness, kurtosis)
+
+Outlier detection (Z-score, IQR, Isolation Forest, Mahalanobis)
+
+Distribution normalization (Log, Box-Cox, Yeo-Johnson)
+
+Missingness visualization (heatmap)
+
+C. Bivariate Analysis
+
+Feature vs target plots (numeric/categorical)
+
+Correlation analysis (feature-feature, feature-target)
+
+Group-level analysis (mean/median by category)
+
+Categorical association (Chi-square/Crosstab)
+
+Feature interaction heatmap
+
+D. Multivariate Analysis
+
+PCA for dimensionality insight
+
+Clustering for segment detection
+
+Feature redundancy & dependency (VIF, Mutual Info, Spearman/Pearson)
+
+ANOVA for group differences
+
+Feature importance (RandomForest, RFE)
+
+E. Temporal / Sequence EDA
+
+Trend and seasonality analysis
+
+Rolling statistics
+
+Lag correlation (ACF/PACF)
+
+Event frequency patterns
+
+Temporal anomaly detection
+
+F. Categorical Feature Analysis
+
+Cardinality ratio analysis
+
+Target mean encoding test
+
+Mutual Information / Entropy with target
+
+Rare category merging check
+
+Encoding impact simulation
+
+G. Data Drift / Balance
+
+Class imbalance quantification
+
+Train-test distribution comparison
+
+Feature drift analysis over time
+
+Label encoding consistency check
+
+Target leakage detection
+
+H. Visualization Layer
+
+Violin/Swarm plots
+
+Facet grid visualizations
+
+Hexbin / density plots
+
+Parallel coordinates plot
+
+Interactive dashboards (Streamlit/Plotly)
+
+I. Target Variable & Model Readiness
+
+Target distribution & balance
+
+Normality test (Shapiro-Wilk)
+
+Heteroscedasticity test (Breusch-Pagan)
+
+Residual behavior with simple model
+
+Feature scaling effect comparison
+
+J. Outlier & Transformation
+
+Outlier impact evaluation (Winsorization)
+
+Transformation check (Log, Box-Cox)
+
+Cap/floor effect simulation
+
+Post-transformation recheck of distribution
+
+Visual validation post-cleaning
+
+K. Domain-Specific & Holistic
+
+Business KPI correlation
+
+Geospatial trends
+
+Textual column analysis (word count, TF-IDF)
+
+Image feature check (metadata, dimensions)
+
+Cross-domain drift (train vs production data)
+
+L. Summary & Reporting
+
+Feature-target ranking summary
+
+Data completeness report
+
+Correlation network diagram
+
+Automated profiling report (pandas-profiling, ydata)
+
+Final EDA conclusions & recommendations
